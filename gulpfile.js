@@ -1,6 +1,13 @@
 const gulp = require('gulp');
 const del = require('del');
+const concat = require('gulp-concat');
+const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
+
+const cssFiles = [
+    './node_modules/normalize.css/normalize.css',
+    './src/css/style.css'
+];
 
 function htmls() {
     return gulp.src('./src/*.html')
@@ -9,7 +16,12 @@ function htmls() {
 }
 
 function styles() {
-    return gulp.src('./src/css/**/*.css')
+    return gulp.src(cssFiles)
+        .pipe(concat('main.css'))
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['> 0.1%'],
+            cascade: false
+        }))
         .pipe(gulp.dest('./build/css'))
         .pipe(browserSync.stream());
 }
