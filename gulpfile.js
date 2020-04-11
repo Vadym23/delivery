@@ -9,6 +9,11 @@ const cssFiles = [
     './src/css/style.css'
 ];
 
+const jsFiles = [
+    './node_modules/wowjs/dist/wow.min.js',
+    './src/js/main.js'
+];
+
 function htmls() {
     return gulp.src('./src/*.html')
         .pipe(gulp.dest('./build'))
@@ -33,7 +38,8 @@ function styles() {
 }
 
 function scripts() {
-    return gulp.src('./src/js/**/*.js')
+    return gulp.src(jsFiles)
+        .pipe(concat('main.js'))
         .pipe(gulp.dest('./build/js'))
         .pipe(browserSync.stream());
 }
