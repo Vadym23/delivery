@@ -393,6 +393,7 @@ body {
 .input-search {
     width: 300px;
     background-image: url(../img/search.svg);
+    margin-left: auto;
 }
 
 .buttons {
@@ -427,16 +428,21 @@ body {
 
 .button-icon {
     margin-right: 6px;
-    vertical-align: center;
+    /* vertical-align: center; */
 }
 
 .button-text {
-    vertical-align: middle;
+    /* vertical-align: middle; */
+}
+
+.button-card-text {
+    margin-right: 10px;
 }
 
 .promo {
     box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
-    background: #FFF1B8 url(../img/promo-img.png) no-repeat top right; 
+    background: #FFF1B8 url(../img/promo-img.png) no-repeat center right;
+    background-size: 1400px; 
     border-radius: 10px;
     padding: 68px 70px;
     margin-bottom: 56px;
@@ -469,8 +475,6 @@ body {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
     margin-bottom: 44px;
 }
 
@@ -481,6 +485,7 @@ body {
     line-height: 42px;
     margin: 0;
     color: #000000;
+    margin-right: 30px;
 }
 
 .cards {
@@ -501,6 +506,7 @@ body {
     overflow: hidden;
     margin-bottom: 30px;
     flex-basis: 30%;
+    text-decoration: none;
 }
 
 .card-img {
@@ -534,6 +540,10 @@ body {
     line-height: 32px;
 }
 
+.card-title-reg {
+    font-weight: 400;
+}
+
 .card-tag {
     font-style: normal;
     font-weight: normal;
@@ -551,6 +561,21 @@ body {
     -webkit-box-align: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.card-buttons {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.card-price-bold {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: 30px;
 }
 
 .rating {
@@ -587,6 +612,12 @@ body {
     vertical-align: middle;
     border-radius: 50%;
     margin-left: 10px;
+}
+
+.ingredients {
+    color: #8c8c8c;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 /* Footer */
@@ -639,11 +670,11 @@ body {
         max-width: 960px;
     }
     .promo {
-        background-position: center right;
-        /* background-size: 750px; */
+        background-position: center right -50px;
+        background-size: 1450px;
     }
     .rating {
-
+        margin-right: 7px;
     }
     .category, .price {
         font-size: 14px;
@@ -656,8 +687,8 @@ body {
     }
     .promo {
         padding: 50px;
-        /* background-size: 900px; */
-        background-position: -300px;
+        background-size: 1250px;
+        background-position: bottom right -150px;
     }
     .promo-text {
         font-size: 16px;
@@ -678,7 +709,7 @@ body {
     .card-info {
         flex-wrap: wrap;
     }
-    .rating {
+    .card .rating {
         flex-basis: 100%;
     }
     .card-title {

@@ -15,6 +15,12 @@ function htmls() {
         .pipe(browserSync.stream());
 }
 
+function pages() {
+    return gulp.src('./src/pages/**/*.html')
+        .pipe(gulp.dest('./build/pages'))
+        .pipe(browserSync.stream());
+}
+
 function styles() {
     return gulp.src(cssFiles)
         .pipe(concat('main.css'))
@@ -42,6 +48,7 @@ function watch() {
 
     gulp.watch('./src/css/**/*.css', styles);
     gulp.watch('./src/img/**/*', imgs);
+    gulp.watch('./src/pages/**/*', pages);
     gulp.watch("./src/**/*.html", htmls);
 }
 
@@ -55,6 +62,6 @@ gulp.task('watch', watch);
 gulp.task('clean', clean);
 
 gulp.task('build', gulp.series(clean,
-        gulp.parallel(htmls, styles, imgs)
+        gulp.parallel(htmls, pages, styles, imgs)
     ));
 gulp.task('dev', gulp.series('build', 'watch'));
