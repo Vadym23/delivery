@@ -12,4 +12,4 @@ close.addEventListener('click', function(event) {
     modal.classList.remove('is-open');
 });
 
-new W.init()
+new WOW().init();

@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create();
 
 const cssFiles = [
     './node_modules/normalize.css/normalize.css',
+    './node_modules/animate.css/animate.min.css',
     './src/css/style.css'
 ];
 
