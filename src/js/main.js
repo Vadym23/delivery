@@ -11,3 +11,5 @@ close.addEventListener('click', function(event) {
 });
 
 new WOW().init();
+
+/* Autorithation */
